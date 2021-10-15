@@ -5,22 +5,30 @@
     body{
         margin-top: 80px;
     }
+    .post-heading{
+       color: #66d6a2 !important;
+    }
+    h3{
+        color: white !important;
+        font-size: large !important;
+    }
 </style>
 
-    <h1>Create your post here...</h1>
+    <h1 class="post-heading">Create your post here...</h1>
     <br/>
+    <div class="container">
     {% if submitted %}
         <h3>Your post has been submitted successfully!!</h3>
     {% else %}
 
-<form action="" method=POST>
+    <form action="" method=POST>
     {% csrf_token %}
     <center>
     {{ form.as_p }}
     <input type="submit" value="Submit" class="btn btn-success">
     
     </center>
-</form>
-
+    </form>
     {% endif %}
+    </div>
 {% endblock content %}

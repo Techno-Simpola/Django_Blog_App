@@ -15,7 +15,7 @@
             body {
                 font-family: "Roboto", sans-serif;
                 font-size: 17px;
-                background-color: #fdfdfd;
+                background-color: #0d0d0d;
             }
         
             .shadow {
@@ -29,11 +29,17 @@
             }
         
             .masthead {
-                background: #3398E1;
+                background: #66d6a2;
+                color: black;
                 height: auto;
                 padding-bottom: 15px;
-                box-shadow: 0 16px 48px #E3E7EB;
                 padding-top: 10px;
+            }
+
+            .btn{
+                background-color: #66d6a2 !important;
+                border: none !important;
+                font-weight: 600;
             }
         </style>
 
@@ -72,8 +78,8 @@
     <!-- footer -->
     <div class="card text-center">
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title">Made with django by Simp0la</h5>
+            <p class="card-text">A basic django web application made for creating and publishing posts made by users.</p>
             <a href={% url 'home' %} class="btn btn-primary">Go to home</a>
         </div>
     </div>

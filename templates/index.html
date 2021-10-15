@@ -7,16 +7,15 @@
     body {
         font-family: "Roboto", sans-serif;
         font-size: 18px;
-        background-color: #fdfdfd;
+        background-color: #0d0d0d;
         margin-top: 80px;
     }
 
     .head_text {
-        color: white;
+        color: #0d0d0d;
     }
-
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
+    .masthead{
+        color: #0d0d0d !important;
     }
 </style>
 
@@ -26,7 +25,7 @@
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Your thoughts are precious </h3>
+                    <h3 class=" site-heading my-4 mt-3"> Your thoughts are precious </h3>
                     <p class="text-light">Share them and enlighten all...
                     </p>
                 </div>
@@ -40,16 +39,16 @@
         <!-- blog enteries -->
         <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
-            <div class="card mb-4">
+            <div class="card card-post mb-4">
                 <div class="card-body">
                     <h2 class="card-title">
                         {{ post.title }}
                     </h2>
                     <p class="card-text text-muted h6">
-                        {{ post.author }}
+                        {{ post.name }}
                     </p>
                     <p class="card-text"> {{ post.content|slice:":200" }} </p>
-                    <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">read more &rarr;</a>
+                    <a href="{% url 'post_detail' post.slug %}" class="btn btn-read btn-primary">read more &rarr;</a>
                 </div>
             </div>
             {% endfor %}
@@ -58,9 +57,25 @@
         {% block sidebar %}
         
         <style>
-            .card {
-                box-shadow: 0 16px 48px #e3373b;
+            .card-title{
+                color: #66d6a2 !important;
             }
+            
+            .card-post{
+                border-radius: 20px !important;
+                transition: 0.3s all ease-in-out;
+            }
+
+            .card-post:hover{
+                scale: 1.05;
+                transition: 0.3s all ease-in-out;
+            }
+            .btn-read{
+                border-radius: 10px !important;
+                text-transform: uppercase;
+                color: #0d0d0d;
+            }
+            
         </style>
         
         <!-- Sidebar Widgets Column -->
