@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body{
+        margin-top: 80px;
+    }
+</style>
+
+    <h1>Create your post here...</h1>
+    <br/>
+    {% if submitted %}
+        <h3>Your post has been submitted successfully!!</h3>
+    {% else %}
+
+<form action="" method=POST>
+    {% csrf_token %}
+    <center>
+    {{ form.as_p }}
+    <input type="submit" value="Submit" class="btn btn-success">
+    
+    </center>
+</form>
+
+    {% endif %}
+{% endblock content %}
