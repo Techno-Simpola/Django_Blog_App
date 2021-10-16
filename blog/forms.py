@@ -22,7 +22,7 @@ class PostForm(ModelForm):
 
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the title'}),
 
-            'content': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'This is your canvas of imagination'}),
+            'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'This is your canvas of imagination'}),
 
             'status': forms.Select(choices=STATUS),
         }
